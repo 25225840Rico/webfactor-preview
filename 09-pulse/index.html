@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>World 03 · PULSE Energy</title>
+<!-- Google Fonts: Anton & DM Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'electric-violet': '#6B2BFF',
+            'neon-yellow': '#F4FF2B',
+            'jet-black': '#0A0A0A',
+            'surface-dark': '#121214',
+            'technical-gray': '#2A2A2E',
+            'tech-border': '#333338'
+          },
+          fontFamily: {
+            'anton': ['Anton', 'sans-serif'],
+            'sans': ['DM Sans', 'sans-serif'],
+            'mono': ['Space Mono', 'monospace']
+          },
+          keyframes: {
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' },
+            },
+            marqueeReverse: {
+              '0%': { transform: 'translateX(-50%)' },
+              '100%': { transform: 'translateX(0%)' },
+            },
+            pulseSlow: {
+              '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+              '50%': { opacity: '0.8', transform: 'scale(1.03)' },
+            },
+            spinSlow: {
+              '0%': { transform: 'rotate(0deg)' },
+              '100%': { transform: 'rotate(360deg)' },
+            }
+          },
+          animation: {
+            marquee: 'marquee 18s linear infinite',
+            marqueeReverse: 'marqueeReverse 18s linear infinite',
+            pulseSlow: 'pulseSlow 4s ease-in-out infinite',
+            spinSlow: 'spinSlow 20s linear infinite',
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Custom clip-path utilities for brutalist diagonal cuts */
+    .clip-diagonal-1 {
+      clip-path: polygon(0 0, 100% 4vw, 100% 100%, 0 calc(100% - 4vw));
+    }
+    .clip-diagonal-hero {
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 0 100%);
+    }
+    .clip-badge {
+      clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+    }
+    .text-stroke-neon {
+      -webkit-text-stroke: 1.5px #F4FF2B;
+      color: transparent;
+    }
+    .text-stroke-white {
+      -webkit-text-stroke: 1.5px #FFFFFF;
+      color: transparent;
+    }
+    /* Hide scrollbars cleanly */
+    ::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0A0A0A;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #6B2BFF;
+    }
+  </style>
+<meta name="robots" content="noindex,nofollow"></head>
+<body class="bg-jet-black text-white font-sans antialiased overflow-x-hidden selection:bg-neon-yellow selection:text-jet-black">
+<!-- ======================================================== -->
+<!-- 1. MARCO SUPERIOR DISCRETO (EXACTAMENTE 32PX DE ALTO)    -->
+<!-- ======================================================== -->
+<header class="fixed top-0 left-0 right-0 h-[32px] bg-[#0E0E10] border-b border-[#222226] z-50 flex items-center justify-between px-3 md:px-5 font-mono text-[10px] uppercase tracking-wider text-[#A0A0A6]">
+<!-- Izquierda -->
+<div class="flex items-center gap-2">
+<a class="hover:text-neon-yellow transition-colors flex items-center gap-1.5 font-bold" href="../06-experience-lab/#exp-03">
+<span>←</span>
+<span>Experience Lab · WEBFACTOR LAB / 03</span>
+</a>
+<span class="text-[#44444A] hidden sm:inline">|</span>
+<span class="text-[#6B2BFF] hidden sm:inline font-bold">PULSE // KINETIC FRAME</span>
+</div>
+<!-- Centro/Derecha: Selector Viewports + Enlace -->
+<div class="flex items-center gap-3 md:gap-5">
+<nav class="flex items-center bg-[#18181C] rounded px-1 py-0.5 border border-[#2B2B32]">
+<button class="px-2 py-0.5 rounded text-jet-black bg-neon-yellow font-bold text-[9px] shadow-sm tracking-widest cursor-default">DESKTOP</button>
+<button class="px-2 py-0.5 rounded text-[#888890] hover:text-white transition-colors text-[9px] tracking-widest">TABLET</button>
+<button class="px-2 py-0.5 rounded text-[#888890] hover:text-white transition-colors text-[9px] tracking-widest">MOBILE</button>
+</nav>
+<a class="text-neon-yellow hover:text-white transition-colors flex items-center gap-1 font-bold text-[10px]" href="../05-contacto/">
+<span>SOLICITAR ESTE DISEÑO</span>
+<span>↗</span>
+</a>
+</div>
+</header>
+<!-- ======================================================== -->
+<!-- 2. WRAPPER PRINCIPAL DE EXPERIENCIA (ANCHO 1280PX MAX)   -->
+<!-- ======================================================== -->
+<main class="pt-[32px] w-full min-h-screen relative overflow-hidden">
+<!-- HERO SECTION KINÉTICO -->
+<section class="relative pt-12 md:pt-20 pb-20 bg-jet-black border-b border-tech-border/40" id="energia">
+<!-- Ambient kinetic glow backdrops -->
+<div class="absolute -top-20 -left-20 w-[500px] h-[500px] bg-electric-violet/25 rounded-full blur-[140px] pointer-events-none"></div>
+<div class="absolute top-1/3 -right-20 w-[420px] h-[420px] bg-neon-yellow/15 rounded-full blur-[160px] pointer-events-none"></div>
+<!-- Top Micro Sub-header inside Hero -->
+<div class="max-w-[1280px] mx-auto px-4 sm:px-8 mb-6 flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="inline-block w-3 h-3 bg-neon-yellow rounded-none rotate-45 shadow-[0_0_12px_#F4FF2B]"></span>
+<span class="font-mono text-xs uppercase tracking-widest text-neon-yellow font-bold">
+            WORLD 03 // PULSE ENERGY CORP
+          </span>
+<span class="font-mono text-[11px] text-[#7A7A85] hidden md:inline">
+            [ SANTIAGO, CHILE • 33.4489° S, 70.6693° W ]
+          </span>
+</div>
+<div class="flex items-center gap-2 bg-surface-dark border border-tech-border px-3 py-1 font-mono text-[10px] text-white">
+<span class="w-2 h-2 rounded-full bg-neon-yellow animate-ping"></span>
+<span class="text-[#9E9EA8]">ESTADO RED:</span>
+<span class="text-neon-yellow font-bold">AUTONOMÍA 100% ACTIVA</span>
+</div>
+</div>
+<!-- MONUMENTAL KINETIC HEADLINE (ANTON CONDENSED) -->
+<div class="max-w-[1280px] mx-auto px-4 sm:px-8 relative z-10">
+<div class="relative">
+<!-- Background SVG High Frequency Pulse Wave -->
+<svg class="absolute -top-10 left-1/4 w-3/4 h-44 text-electric-violet/30 pointer-events-none hidden lg:block" fill="none" viewbox="0 0 800 120">
+<path d="M0,60 L200,60 L240,10 L270,110 L300,30 L330,85 L360,60 L500,60 L540,5 L570,115 L600,60 L800,60" stroke="currentColor" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<!-- Kinetic Typography Stack -->
+<div class="select-none leading-[0.88] tracking-tighter">
+<div class="flex flex-wrap items-baseline gap-x-4">
+<span class="font-anton text-[76px] sm:text-[130px] md:text-[170px] lg:text-[210px] text-white uppercase transform hover:scale-[1.01] transition-transform">
+                ENERGÍA
+              </span>
+<span class="font-mono text-xs md:text-sm text-neon-yellow bg-electric-violet px-3 py-1 font-bold tracking-widest uppercase rotate-[-3deg] inline-block mb-4">
+                // SIN INTERRUPCIONES
+              </span>
+</div>
+<div class="flex flex-wrap items-center gap-4 -mt-2 sm:-mt-6 md:-mt-10">
+<span class="font-anton text-[76px] sm:text-[130px] md:text-[170px] lg:text-[210px] text-stroke-neon uppercase transform hover:translate-x-2 transition-transform">
+                QUE SE
+              </span>
+<span class="font-anton text-[76px] sm:text-[130px] md:text-[170px] lg:text-[210px] text-neon-yellow uppercase drop-shadow-[0_0_35px_rgba(244,255,43,0.35)]">
+                NOTA.
+              </span>
+</div>
+</div>
+</div>
+<!-- Hero Interaction Row: Description + Giant Magnetic Interactive Circle Button -->
+<div class="mt-8 md:mt-12 pt-8 border-t border-tech-border/50 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-7 space-y-4">
+<p class="font-sans text-xl md:text-2xl text-[#D8D8DF] font-light max-w-2xl leading-relaxed">
+              Desplegamos infraestructura solar radical para arquitectura residencial, comercial y productiva en Chile. Generación local, desvinculación tarifaria y diseño con presencia contundente.
+            </p>
+<div class="flex flex-wrap gap-2 pt-2 font-mono text-[11px] text-[#A2A2AD]">
+<span class="bg-surface-dark border border-tech-border px-2.5 py-1">AUTOCONSUMO TOTAL</span>
+<span class="bg-surface-dark border border-tech-border px-2.5 py-1">CERTIFICACIÓN SEC CLASE A</span>
+<span class="bg-surface-dark border border-tech-border px-2.5 py-1 text-neon-yellow">CERO RETIRO FÓSIL</span>
+</div>
+</div>
+<!-- GIANT INTERACTIVE CIRCULAR BUTTON "EMPEZAR" -->
+<div class="lg:col-span-5 flex justify-start lg:justify-end items-center">
+<a class="group relative w-44 h-44 sm:w-52 sm:h-52 rounded-full bg-electric-violet flex items-center justify-center cursor-pointer transition-all duration-500 hover:scale-105 hover:bg-neon-yellow shadow-[0_0_40px_rgba(107,43,255,0.6)] hover:shadow-[0_0_55px_rgba(244,255,43,0.7)]" href="#simulador">
+<!-- Outer rotating text ring -->
+<div class="absolute inset-2 border-2 border-dashed border-white/40 group-hover:border-jet-black/50 rounded-full animate-spinSlow"></div>
+<div class="relative z-10 text-center flex flex-col items-center justify-center p-4">
+<span class="font-anton text-3xl sm:text-4xl uppercase text-white group-hover:text-jet-black tracking-wider transition-colors">
+                  EMPEZAR
+                </span>
+<span class="font-mono text-[10px] text-neon-yellow group-hover:text-jet-black tracking-widest font-bold mt-1 transition-colors flex items-center gap-1">
+                  CALIFICAR <span>→</span>
+</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+<!-- KINETIC RUNNING MARQUEE 01 -->
+<div class="mt-16 w-full bg-electric-violet py-3.5 border-y-2 border-neon-yellow overflow-hidden rotate-[-0.8deg] scale-[1.02] shadow-2xl">
+<div class="flex whitespace-nowrap animate-marquee font-anton text-2xl md:text-3xl text-white uppercase tracking-wider">
+<span class="mx-4">SOLAR • HOGARES • PYMES • EFICIENCIA • AUTONOMÍA • CHILE • ARQUITECTURA ENERGÉTICA • CERO EMISIONES • INDEPENDENCIA TIER-1 •</span>
+<span class="mx-4 text-neon-yellow">SOLAR • HOGARES • PYMES • EFICIENCIA • AUTONOMÍA • CHILE • ARQUITECTURA ENERGÉTICA • CERO EMISIONES • INDEPENDENCIA TIER-1 •</span>
+<span class="mx-4">SOLAR • HOGARES • PYMES • EFICIENCIA • AUTONOMÍA • CHILE • ARQUITECTURA ENERGÉTICA • CERO EMISIONES • INDEPENDENCIA TIER-1 •</span>
+<span class="mx-4 text-neon-yellow">SOLAR • HOGARES • PYMES • EFICIENCIA • AUTONOMÍA • CHILE • ARQUITECTURA ENERGÉTICA • CERO EMISIONES • INDEPENDENCIA TIER-1 •</span>
+</div>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- 3. SECCIÓN RECORTE DIAGONAL Y BLOQUES INVERTIDOS          -->
+<!-- ======================================================== -->
+<section class="relative py-24 bg-surface-dark overflow-hidden" id="como-funciona">
+<!-- Asymmetric Diagonal Background Cut using polygon -->
+<div class="absolute inset-0 bg-[#0E0E10] clip-diagonal-1 pointer-events-none"></div>
+<div class="max-w-[1280px] mx-auto px-4 sm:px-8 relative z-10">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div>
+<span class="font-mono text-xs text-electric-violet bg-white px-2 py-0.5 font-bold uppercase tracking-widest">
+              [ PROTOCOLOS // ARQUITECTURA SOLAR ]
+            </span>
+<h2 class="font-anton text-5xl sm:text-7xl md:text-8xl text-white uppercase mt-3 tracking-tight">
+              ECOSISTEMA <span class="text-neon-yellow">DE POTENCIA</span>
+</h2>
+</div>
+<p class="font-sans text-sm md:text-base text-[#9A9AA6] max-w-md">
+            Módulos de ingeniería diseñados para operar con resiliencia climática absoluta, eliminando la fragilidad de la red convencional.
+          </p>
+</div>
+<!-- Violent Contrast Bento Modules Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+<!-- Module 1: CERO EMISIONES (Deep Black with Violet Highlights) -->
+<div class="bg-jet-black border-2 border-tech-border p-8 relative flex flex-col justify-between group hover:border-electric-violet transition-colors">
+<div>
+<div class="flex items-center justify-between pb-6 border-b border-tech-border/60">
+<span class="font-mono text-xs text-neon-yellow font-bold tracking-widest">BLOQUE // 01</span>
+<span class="material-symbols-outlined text-neon-yellow text-3xl">solar_power</span>
+</div>
+<h3 class="font-anton text-3xl sm:text-4xl text-white uppercase mt-6 mb-4 tracking-normal">
+                CERO EMISIONES
+              </h3>
+<p class="font-sans text-[#B0B0BC] text-sm leading-relaxed">
+                Captación fotovoltaica directa mediante silicio monocristalino de alta pureza. Descarbonización real de consumo diario y supresión del factor de emisión contaminante local.
+              </p>
+</div>
+<div class="mt-8 pt-6 border-t border-tech-border/40">
+<!-- High frequency vector energy pulse SVG -->
+<svg class="w-full h-10 text-electric-violet" fill="none" viewbox="0 0 200 40">
+<path d="M0,20 L60,20 L75,5 L90,35 L105,12 L120,28 L135,20 L200,20" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+<div class="flex justify-between font-mono text-[10px] text-[#7A7A86] mt-2">
+<span>MATRIZ PURA</span>
+<span class="text-white">CONVERSIÓN DIRECTA</span>
+</div>
+</div>
+</div>
+<!-- Module 2: AUTONOMÍA ELÉCTRICA (Inverted Violet Block) -->
+<div class="bg-electric-violet text-white p-8 relative flex flex-col justify-between shadow-[0_10px_35px_rgba(107,43,255,0.4)] transform md:-translate-y-4">
+<div>
+<div class="flex items-center justify-between pb-6 border-b border-white/20">
+<span class="font-mono text-xs text-neon-yellow font-bold tracking-widest bg-jet-black px-2 py-0.5">BLOQUE // 02</span>
+<span class="material-symbols-outlined text-neon-yellow text-3xl">bolt</span>
+</div>
+<h3 class="font-anton text-3xl sm:text-4xl text-white uppercase mt-6 mb-4 tracking-normal">
+                AUTONOMÍA ELÉCTRICA
+              </h3>
+<p class="font-sans text-white/90 text-sm leading-relaxed">
+                Blindaje total contra cortes masivos e inestabilidad del sistema central. Acumulación modular inteligente con capacidad de respaldo crítico para equipos clave y habitabilidad continua.
+              </p>
+</div>
+<div class="mt-8 pt-6 border-t border-white/20">
+<!-- Neon wave line -->
+<div class="grid grid-cols-6 gap-1 bg-jet-black/60 p-2.5 rounded">
+<span class="h-2 bg-neon-yellow"></span>
+<span class="h-2 bg-neon-yellow"></span>
+<span class="h-2 bg-neon-yellow"></span>
+<span class="h-2 bg-neon-yellow"></span>
+<span class="h-2 bg-neon-yellow"></span>
+<span class="h-2 bg-neon-yellow/30"></span>
+</div>
+<div class="flex justify-between font-mono text-[10px] text-white/80 mt-2 font-bold">
+<span>ALMACENAMIENTO LFP</span>
+<span class="text-neon-yellow">INVERSIÓN HÍBRIDA</span>
+</div>
+</div>
+</div>
+<!-- Module 3: SOPORTE DE ALTA MONTAÑA Y CIUDAD (Yellow-accented Block) -->
+<div class="bg-jet-black border-2 border-tech-border p-8 relative flex flex-col justify-between group hover:border-neon-yellow transition-colors">
+<div>
+<div class="flex items-center justify-between pb-6 border-b border-tech-border/60">
+<span class="font-mono text-xs text-neon-yellow font-bold tracking-widest">BLOQUE // 03</span>
+<span class="material-symbols-outlined text-neon-yellow text-3xl">landscape</span>
+</div>
+<h3 class="font-anton text-3xl sm:text-4xl text-white uppercase mt-6 mb-4 tracking-normal">
+                SOPORTE ALTA MONTAÑA Y CIUDAD
+              </h3>
+<p class="font-sans text-[#B0B0BC] text-sm leading-relaxed">
+                Estructuras en aluminio anodizado e inoxidables con diseño aeroelástico para vientos cordilleranos de alta velocidad, nieve y techumbres urbanas complejas en todo el territorio chileno.
+              </p>
+</div>
+<div class="mt-8 pt-6 border-t border-tech-border/40">
+<div class="flex items-center justify-between font-mono text-[10px] bg-surface-dark p-2 border border-tech-border">
+<span class="text-white flex items-center gap-1">
+<span class="w-1.5 h-1.5 bg-neon-yellow"></span> NORMA CHILENA
+                </span>
+<span class="text-neon-yellow font-bold">NCh 432 / SEC TE-4</span>
+</div>
+<div class="flex justify-between font-mono text-[10px] text-[#7A7A86] mt-2">
+<span>RESISTENCIA TÉCNICA</span>
+<span class="text-white">COBERTURA NACIONAL</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- KINETIC RUNNING MARQUEE 02 (Reverse) -->
+<div class="mt-20 w-full bg-neon-yellow py-3 border-y-2 border-jet-black overflow-hidden">
+<div class="flex whitespace-nowrap animate-marqueeReverse font-anton text-2xl md:text-3xl text-jet-black uppercase tracking-wider">
+<span class="mx-4">PULSE QUALIFIER v4.0 • EVALUACIÓN IN SITU • CERTIFICACIÓN ELÉCTRICA • MONITOREO DINÁMICO • ARQUITECTURA RESILIENTE • CHILE 2026 •</span>
+<span class="mx-4 text-electric-violet">PULSE QUALIFIER v4.0 • EVALUACIÓN IN SITU • CERTIFICACIÓN ELÉCTRICA • MONITOREO DINÁMICO • ARQUITECTURA RESILIENTE • CHILE 2026 •</span>
+<span class="mx-4">PULSE QUALIFIER v4.0 • EVALUACIÓN IN SITU • CERTIFICACIÓN ELÉCTRICA • MONITOREO DINÁMICO • ARQUITECTURA RESILIENTE • CHILE 2026 •</span>
+<span class="mx-4 text-electric-violet">PULSE QUALIFIER v4.0 • EVALUACIÓN IN SITU • CERTIFICACIÓN ELÉCTRICA • MONITOREO DINÁMICO • ARQUITECTURA RESILIENTE • CHILE 2026 •</span>
+</div>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- 4. IA = EMBUDO COMERCIAL INTELIGENTE (QUIZ A PANTALLA C.) -->
+<!-- ======================================================== -->
+<section class="py-20 md:py-28 bg-jet-black relative" id="simulador">
+<!-- Subtle Tech Grid Lines Background -->
+<div class="max-w-[1280px] mx-auto px-4 sm:px-8">
+<!-- Mandatory Demo Badge & Header -->
+<div class="border-b-2 border-tech-border pb-8 mb-12 flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
+<div>
+<!-- Etiqueta reglamentaria obligatoria -->
+<div class="inline-flex items-center gap-2 bg-[#1A1A20] border border-tech-border px-3 py-1 font-mono text-[11px] mb-3">
+<span class="w-2 h-2 rounded-full bg-neon-yellow animate-ping"></span>
+<span class="text-white font-bold tracking-wider">Demo — escenario simulado</span>
+<span class="text-[#6B2BFF] font-bold">| LAB-QUALIFIER</span>
+</div>
+<h2 class="font-anton text-4xl sm:text-6xl text-white uppercase tracking-tight">
+              SISTEMA DE CALIFICACIÓN DE PROYECTO SOLAR
+            </h2>
+<p class="font-mono text-sm text-neon-yellow mt-1">
+              // PULSE QUALIFIER v4.0 • ASISTENCIA DE INGENIERÍA EN VIVO
+            </p>
+</div>
+<div class="font-mono text-xs text-[#8A8A96] text-right hidden sm:block">
+<span>DISPONIBILIDAD INGENIERÍA:</span>
+<span class="text-neon-yellow font-bold block text-sm">INMEDIATA (R.M.)</span>
+</div>
+</div>
+<!-- 2-COLUMN LAYOUT -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+<!-- COLUMNA IZQUIERDA: QUIZ INTERACTIVO (7 Cols) -->
+<div class="lg:col-span-7 bg-[#101014] border-2 border-tech-border p-6 sm:p-10 relative">
+<!-- Progress indicator with segmented bar -->
+<div class="mb-8">
+<div class="flex items-center justify-between font-mono text-xs uppercase mb-3">
+<span class="text-neon-yellow font-bold">Paso 02 de 04</span>
+<span class="text-[#888894]">TIPOLOGÍA DE INMUEBLE</span>
+</div>
+<!-- Segmented progress bar in neon yellow -->
+<div class="grid grid-cols-4 gap-2">
+<div class="h-2 bg-neon-yellow"></div>
+<div class="h-2 bg-neon-yellow"></div>
+<div class="h-2 bg-technical-gray"></div>
+<div class="h-2 bg-technical-gray"></div>
+</div>
+</div>
+<!-- Quiz Question in giant Anton -->
+<div class="mb-8">
+<span class="font-mono text-[11px] text-[#868694] tracking-widest block uppercase mb-1">
+                SELECCIÓN DE ARQUITECTURA
+              </span>
+<h3 class="font-anton text-3xl sm:text-5xl text-white uppercase leading-tight tracking-normal">
+                ¿DÓNDE QUIERES GENERAR ENERGÍA?
+              </h3>
+</div>
+<!-- Large Brutalist Response Buttons -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10" id="quiz-options">
+<!-- Option 1: CASA (Selected by default) -->
+<button class="group relative text-left p-5 border-2 border-neon-yellow bg-neon-yellow text-jet-black transition-all duration-200 transform scale-[1.01] shadow-[0_0_20px_rgba(244,255,43,0.3)]" type="button">
+<div class="flex items-center justify-between mb-2">
+<span class="font-anton text-3xl tracking-wide">CASA</span>
+<span class="font-mono text-xs bg-jet-black text-neon-yellow px-1.5 py-0.5 font-bold">ACTIVO</span>
+</div>
+<p class="font-sans text-xs text-jet-black font-semibold">
+                  Residencial urbana o parcela
+                </p>
+</button>
+<!-- Option 2: PYME -->
+<button class="group relative text-left p-5 border-2 border-tech-border bg-jet-black text-white hover:border-electric-violet hover:bg-[#16161C] transition-all" type="button">
+<div class="flex items-center justify-between mb-2">
+<span class="font-anton text-3xl tracking-wide group-hover:text-neon-yellow transition-colors">PYME</span>
+<span class="font-mono text-xs text-[#6A6A76]">02</span>
+</div>
+<p class="font-sans text-xs text-[#9E9EA8]">
+                  Comercio, talleres, bodegas
+                </p>
+</button>
+<!-- Option 3: CAMPO -->
+<button class="group relative text-left p-5 border-2 border-tech-border bg-jet-black text-white hover:border-electric-violet hover:bg-[#16161C] transition-all" type="button">
+<div class="flex items-center justify-between mb-2">
+<span class="font-anton text-3xl tracking-wide group-hover:text-neon-yellow transition-colors">CAMPO</span>
+<span class="font-mono text-xs text-[#6A6A76]">03</span>
+</div>
+<p class="font-sans text-xs text-[#9E9EA8]">
+                  Agrícola, bombeo y riego
+                </p>
+</button>
+<!-- Option 4: INDUSTRIA -->
+<button class="group relative text-left p-5 border-2 border-tech-border bg-jet-black text-white hover:border-electric-violet hover:bg-[#16161C] transition-all" type="button">
+<div class="flex items-center justify-between mb-2">
+<span class="font-anton text-3xl tracking-wide group-hover:text-neon-yellow transition-colors">INDUSTRIA</span>
+<span class="font-mono text-xs text-[#6A6A76]">04</span>
+</div>
+<p class="font-sans text-xs text-[#9E9EA8]">
+                  Faenas y grandes consumidores
+                </p>
+</button>
+</div>
+<!-- Quiz Navigation Controls -->
+<div class="flex items-center justify-between pt-6 border-t border-tech-border">
+<button class="font-mono text-xs uppercase text-[#888894] hover:text-white transition-colors flex items-center gap-1.5 px-3 py-2 border border-tech-border hover:border-white" type="button">
+<span>←</span> Paso anterior
+              </button>
+<button class="font-anton text-lg uppercase bg-white text-jet-black hover:bg-neon-yellow transition-colors px-6 py-2.5 flex items-center gap-2" type="button">
+<span>Siguiente paso</span>
+<span>→</span>
+</button>
+</div>
+</div>
+<!-- COLUMNA DERECHA: TARJETA DE SOLICITUD EN TIEMPO REAL (5 Cols) -->
+<div class="lg:col-span-5 bg-[#0C0C0E] border-2 border-electric-violet p-6 sm:p-8 shadow-[0_0_35px_rgba(107,43,255,0.25)] relative">
+<!-- Top Card Header -->
+<div class="flex items-center justify-between pb-4 border-b border-tech-border">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 bg-neon-yellow rounded-full animate-pulse"></span>
+<span class="font-mono text-xs text-white font-bold uppercase tracking-wider">EXPEDIENTE EN VIVO</span>
+</div>
+<span class="font-mono text-[10px] text-neon-yellow bg-jet-black border border-neon-yellow/40 px-2 py-0.5">
+                ID_EXP: #CL-8924
+              </span>
+</div>
+<div class="my-5">
+<span class="font-mono text-[10px] text-[#7C7C88] uppercase tracking-widest block">TELEMETRÍA RECOPILADA</span>
+<h4 class="font-anton text-2xl text-white uppercase mt-0.5">RESUMEN PARA ASESOR TÉCNICO</h4>
+</div>
+<!-- Resumen dinámico structured list -->
+<div class="space-y-3 font-mono text-xs">
+<div class="bg-surface-dark border border-tech-border p-3 flex justify-between items-center">
+<span class="text-[#888894]">Tipo de Proyecto:</span>
+<span class="text-neon-yellow font-bold uppercase">Casa Residencial</span>
+</div>
+<div class="bg-surface-dark border border-tech-border p-3 flex justify-between items-center">
+<span class="text-[#888894]">Comuna / Región:</span>
+<span class="text-white font-medium">La Florida, Santiago</span>
+</div>
+<div class="bg-surface-dark border border-tech-border p-3 flex justify-between items-center">
+<span class="text-[#888894]">Factura mensual ref:</span>
+<span class="text-neon-yellow font-bold">$85.000 CLP</span>
+</div>
+<div class="bg-surface-dark border border-tech-border p-3 flex justify-between items-center">
+<span class="text-[#888894]">Horizonte instalación:</span>
+<span class="text-white font-medium">3 meses (Q2 2026)</span>
+</div>
+</div>
+<!-- Insignias de telemetría y validación en tiempo real -->
+<div class="mt-6 pt-5 border-t border-tech-border space-y-2 font-mono text-xs">
+<div class="flex items-center gap-2 text-white bg-jet-black px-3 py-1.5 border border-tech-border">
+<span class="text-neon-yellow font-bold">✓</span>
+<span class="font-bold text-[11px]">Intent detected</span>
+<span class="ml-auto text-[9px] text-[#6E6E78]">SCORE 0.98</span>
+</div>
+<div class="flex items-center gap-2 text-white bg-jet-black px-3 py-1.5 border border-tech-border">
+<span class="text-neon-yellow font-bold">✓</span>
+<span class="font-bold text-[11px]">Lead qualified</span>
+<span class="ml-auto text-[9px] text-[#6E6E78]">VIABILIDAD ALTA</span>
+</div>
+<div class="flex items-center gap-2 text-neon-yellow bg-jet-black px-3 py-1.5 border border-electric-violet">
+<span class="font-bold">⚡</span>
+<span class="text-white font-bold text-[11px]">Human approval required</span>
+<span class="ml-auto text-[9px] text-neon-yellow">INGENIERO SEC</span>
+</div>
+</div>
+<!-- Direct Action Button -->
+<div class="mt-8">
+<button class="w-full py-4 bg-electric-violet hover:bg-neon-yellow text-white hover:text-jet-black font-anton text-xl uppercase tracking-wider transition-all duration-300 shadow-[0_0_25px_rgba(107,43,255,0.6)] flex items-center justify-center gap-2" id="confirmQuizBtn" type="button">
+<span>CONFIRMAR SOLICITUD Y ASIGNAR INGENIERO</span>
+<span class="material-symbols-outlined text-xl">send</span>
+</button>
+<p class="hidden text-center font-mono text-[10px] text-neon-yellow bg-surface-dark border border-neon-yellow p-2 mt-3 uppercase tracking-wider" id="confirmNotice">
+                ✓ Solicitud remitida. Ingeniero asignado para la zona de La Florida.
+              </p>
+</div>
+<div class="mt-4 text-center font-mono text-[9px] text-[#686874]">
+              ENCRIPTACIÓN AES-256 • PROTOCOLO DIRECTO ASESOR TIER-1
+            </div>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- 5. FOOTER DE PULSE ENERGY                                -->
+<!-- ======================================================== -->
+<footer class="bg-jet-black border-t-2 border-electric-violet py-16 text-[#A0A0AA] relative" id="hablemos">
+<div class="max-w-[1280px] mx-auto px-4 sm:px-8">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start pb-12 border-b border-tech-border">
+<!-- Brand Column -->
+<div class="md:col-span-6 space-y-4">
+<div class="flex items-center gap-2">
+<span class="w-4 h-4 bg-neon-yellow"></span>
+<span class="font-anton text-4xl text-white tracking-wider">PULSE ENERGY</span>
+</div>
+<p class="font-sans text-sm text-[#8E8E9C] max-w-md leading-relaxed">
+              Infraestructura fotovoltaica de alto estándar. Ingeniería energética sin concesiones estéticas ni operacionales para el Chile contemporáneo.
+            </p>
+<div class="font-mono text-xs text-neon-yellow pt-2">
+              SANTIAGO: 33.4489° S, 70.6693° W • ALTITUD 570M
+            </div>
+</div>
+<!-- Quick Navigation -->
+<div class="md:col-span-3 space-y-2 font-mono text-xs">
+<span class="text-white font-bold uppercase tracking-wider block mb-3 text-sm">ÍNDICE DE SISTEMA</span>
+<ul class="space-y-2">
+<li><a class="hover:text-neon-yellow transition-colors" href="#energia">01 // Energía Autoconsumo</a></li>
+<li><a class="hover:text-neon-yellow transition-colors" href="#como-funciona">02 // Cómo Funciona</a></li>
+<li><a class="hover:text-neon-yellow transition-colors" href="#simulador">03 // Pulse Qualifier v4.0</a></li>
+<li><a class="hover:text-neon-yellow transition-colors" href="#hablemos">04 // Asignación de Ingeniero</a></li>
+</ul>
+</div>
+<!-- Technical Protocol Column -->
+<div class="md:col-span-3 space-y-2 font-mono text-xs">
+<span class="text-white font-bold uppercase tracking-wider block mb-3 text-sm">CERTIFICACIONES</span>
+<div class="space-y-1.5 text-[#7C7C88]">
+<p>• Superintendencia de Electricidad y Combustibles (SEC)</p>
+<p>• Cumplimiento Ley 21.118 (Net Billing)</p>
+<p>• Módulos N-Type Bifaciales Grado Industrial</p>
+</div>
+</div>
+</div>
+<!-- Minimalist Radical Closing -->
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-[#787884]">
+<div>
+            © 2026 PULSE ENERGY · Chile. Todos los derechos reservados.
+          </div>
+<div class="flex items-center gap-4 text-white">
+<span class="hover:text-neon-yellow cursor-pointer">LAB VERSION 4.08</span>
+<span>•</span>
+<span class="text-neon-yellow">CHILE EXPERIMENTAL LAB</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- ======================================================== -->
+<!-- 6. NAVEGACIÓN FLOTANTE INFERIOR CENTRADA (BLACK PILL)    -->
+<!-- ======================================================== -->
+<nav class="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 bg-[#0E0E12]/90 backdrop-blur-md border border-neon-yellow/40 px-4 py-2.5 rounded-full shadow-[0_10px_35px_rgba(0,0,0,0.8)] flex items-center gap-2 sm:gap-4 font-mono text-xs text-white">
+<a class="px-3 py-1 hover:text-neon-yellow transition-colors flex items-center gap-1.5" href="#energia">
+<span class="w-1.5 h-1.5 bg-neon-yellow rounded-full"></span>
+<span>Energía</span>
+</a>
+<span class="text-[#33333C]">/</span>
+<a class="px-3 py-1 hover:text-neon-yellow transition-colors" href="#como-funciona">
+        Cómo funciona
+      </a>
+<span class="text-[#33333C]">/</span>
+<a class="px-3 py-1 hover:text-neon-yellow transition-colors" href="#simulador">
+        Simulador
+      </a>
+<span class="text-[#33333C]">/</span>
+<a class="px-3 py-1 hover:text-neon-yellow transition-colors" href="#hablemos">
+        Hablemos
+      </a>
+<a class="ml-1 sm:ml-2 bg-neon-yellow text-jet-black font-anton uppercase text-sm tracking-wider px-3.5 py-1 rounded-full hover:bg-white transition-colors" href="#simulador">
+        EVALUAR
+      </a>
+</nav>
+</main>
+<script>
+    // Quiz Confirmation Interaction
+    const confirmBtn = document.getElementById('confirmQuizBtn');
+    const confirmNotice = document.getElementById('confirmNotice');
+    if (confirmBtn && confirmNotice) {
+      confirmBtn.addEventListener('click', () => {
+        confirmBtn.disabled = true;
+        confirmBtn.innerHTML = '<span>PROCESANDO ASIGNACIÓN...</span>';
+        setTimeout(() => {
+          confirmBtn.innerHTML = '<span>SOLICITUD CONFIRMADA ✓</span>';
+          confirmNotice.classList.remove('hidden');
+        }, 500);
+      });
+    }
+  </script>
+</body></html>

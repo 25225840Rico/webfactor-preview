@@ -1,0 +1,621 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=1280, initial-scale=1.0" name="viewport">
+<title>World 01 · AXION Industries</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;700;800&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            carbon: '#111214',
+            carbonDark: '#0b0c0e',
+            contentBg: '#0c0d10',
+            steelBlue: '#3E5C76',
+            metalGray: '#22252a',
+            orangeInd: '#FF6B00',
+            borderSubtle: 'rgba(255, 255, 255, 0.08)',
+          },
+          fontFamily: {
+            grotesk: ['"Space Grotesk"', 'sans-serif'],
+            mono: ['"IBM Plex Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      background-color: #0b0c0e;
+      color: #E6E8EC;
+      font-family: 'Space Grotesk', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #0b0c0e;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #22252a;
+    }
+  </style>
+<meta name="robots" content="noindex,nofollow"></head>
+<body class="w-[1280px] min-h-screen bg-carbonDark text-[#E6E8EC] antialiased select-none mx-auto">
+<!-- 1. BARRA SUPERIOR DISCRETA DE 32px -->
+<header class="h-[32px] bg-[#0e0f12] border-b border-[rgba(255,255,255,0.08)] px-5 flex items-center justify-between font-mono text-[11px] sticky top-0 z-50">
+<div class="flex items-center gap-2">
+<a class="text-[#888D96] hover:text-white transition-colors tracking-tight" href="../06-experience-lab/#exp-01">
+        ← Experience Lab · WEBFACTOR LAB / 01
+      </a>
+</div>
+<div class="flex items-center gap-6">
+<!-- Selector Responsive -->
+<div class="flex items-center gap-3">
+<button class="px-2 py-0.5 bg-[#22252a] text-white border border-[rgba(255,255,255,0.15)] text-[10px] uppercase font-semibold">
+          Desktop
+        </button>
+<button class="text-[#6C727F] hover:text-white transition-colors text-[10px] uppercase">
+          Tablet
+        </button>
+<button class="text-[#6C727F] hover:text-white transition-colors text-[10px] uppercase">
+          Mobile
+        </button>
+</div>
+<div class="w-[1px] h-3 bg-white/10"></div>
+<a class="text-orangeInd hover:text-[#ff852e] font-semibold tracking-wider uppercase text-[10px] transition-colors" href="../05-contacto/">
+        SOLICITAR ESTE DISEÑO
+      </a>
+</div>
+</header>
+<!-- 2. CONTENEDOR PRINCIPAL: SIDEBAR FIJA + CONTENIDO -->
+<div class="flex w-full min-h-[calc(100vh-32px)]">
+<!-- SIDEBAR IZQUIERDA (240px, ESTANCA / BRUTALISTA) -->
+<aside class="w-[240px] shrink-0 bg-carbon border-r border-[rgba(255,255,255,0.08)] p-6 flex flex-col justify-between sticky top-[32px] h-[calc(100vh-32px)]">
+<!-- Top Sidebar: Logo y Menú -->
+<div>
+<!-- Logo AXION -->
+<div class="mb-8">
+<div class="flex items-center gap-2.5">
+<svg class="w-6 h-6 text-orangeInd shrink-0" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 2L2 20h4.5l2.25-4.2h6.5l2.25 4.2H22L12 2zm0 6.8l2.2 4.1h-4.4L12 8.8z"></path>
+</svg>
+<span class="font-grotesk font-extrabold text-xl tracking-wider text-white">AXION</span>
+</div>
+<div class="font-mono text-[10px] text-[#6C727F] tracking-widest mt-1">
+            // HEAVY INDUSTRIES · CL
+          </div>
+</div>
+<!-- Indicador de Sistema -->
+<div class="mb-8 p-2.5 bg-black/40 border border-[rgba(255,255,255,0.06)] font-mono text-[10px]">
+<div class="text-[#888D96] mb-1">OPERATIONAL GRID</div>
+<div class="flex items-center gap-1.5 text-white font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-orangeInd animate-pulse"></span>
+            REGION II / ANTOFAGASTA
+          </div>
+</div>
+<!-- Menú Vertical Numerado -->
+<nav class="font-mono text-xs space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 bg-[rgba(255,107,0,0.08)] border-l-2 border-orangeInd text-white font-medium" href="#capacidades">
+<span class="text-orangeInd text-[11px]">01</span>
+<span class="">CAPACIDADES</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-[#888D96] hover:text-white hover:bg-white/5 transition-all" href="#proyectos">
+<span class="text-[#555A64] text-[11px]">02</span>
+<span class="">PROYECTOS</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-[#888D96] hover:text-white hover:bg-white/5 transition-all" href="#capacidades">
+<span class="text-[#555A64] text-[11px]">03</span>
+<span class="">FLOTA PESADA</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-[#888D96] hover:text-white hover:bg-white/5 transition-all" href="#seguridad">
+<span class="text-[#555A64] text-[11px]">04</span>
+<span class="">SEGURIDAD &amp; ISO</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2.5 text-[#888D96] hover:text-white hover:bg-white/5 transition-all group" href="#cotizador">
+<div class="flex items-center gap-3">
+<span class="text-[#555A64] text-[11px]">05</span>
+<span class="">COTIZAR</span>
+</div>
+<span class="px-1 py-0.2 bg-orangeInd/20 border border-orangeInd/40 text-orangeInd text-[9px] font-bold">
+              IA
+            </span>
+</a>
+</nav>
+</div>
+<!-- Telemetría al Pie del Sidebar -->
+<div class="pt-6 border-t border-[rgba(255,255,255,0.08)] font-mono text-[10px] space-y-2">
+<div>
+<div class="text-[#6C727F]">BASE OPERACIONAL:</div>
+<div class="text-[#B4BAC5] leading-tight mt-0.5">BASE CALAMA // ELEV. 2.260m</div>
+<div class="text-[#6C727F] text-[9px]">22.4542° S, 68.9294° W</div>
+</div>
+<div class="p-2 bg-[#0c0d10] border border-white/5">
+<div class="text-[#888D96] text-[9px]">ESTADO GENERAL</div>
+<div class="text-orangeInd font-semibold mt-0.5">ESTADO DE FLOTA: ALTA DISPONIBILIDAD OPERATIVA</div>
+</div>
+</div>
+</aside>
+<!-- 3. ÁREA DE CONTENIDO (flex-1, Fondo #0c0d10) -->
+<main class="flex-1 bg-contentBg overflow-y-auto">
+<!-- a) SECCIÓN HERO (Gran formato a sangre con imagen industrial) -->
+<section class="relative min-h-[580px] border-b border-[rgba(255,255,255,0.08)] flex flex-col justify-between p-10 overflow-hidden">
+<!-- Imagen de Fondo Industrial con Overlay Degradado -->
+<div class="absolute inset-0 z-0">
+<img alt="Faena minera en el Desierto de Atacama" class="w-full h-full object-cover opacity-35 filter grayscale contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTq0Vf_nOdEQha_ShgjAhqVPM6hYHJ-WncYx24K82WUX_qK9dF7sEQ4-oOPHTk7kYPE_aRhdpg3VgkKiN2KImiuluHi2m6OwLUgeYtE7hPG2GL2Lj9XfcExJ35UDDhcl0lX1X9estGTPJK9jdCHNlEKaPZ9qdf3g702XgfaiB6kyKIFxAcS4YU5jrNpicwEURoP3T5gfsI8Y8GVC3bWa6WczOG70Jl3eK_55yALD3c">
+<div class="absolute inset-0 bg-gradient-to-t from-contentBg via-contentBg/70 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-contentBg/90 via-transparent to-contentBg/40"></div>
+</div>
+<!-- Metadatos superiores sobre la foto -->
+<div class="relative z-10 flex items-center justify-between font-mono text-[11px] text-[#A6ADB9] border-b border-white/10 pb-4">
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 bg-orangeInd inline-block"></span>
+<span class="text-white font-semibold">SPEC: DS-01 // MINING LOGISTICS &amp; PERSONNEL</span>
+</div>
+<div class="text-[#888D96]">
+            LAT: -22.3021° LON: -68.9031° · ATACAMA DESERT
+          </div>
+</div>
+<!-- Titular masivo apilado y subtexto -->
+<div class="relative z-10 max-w-3xl mt-16 mb-4">
+<div class="inline-block px-2 py-0.5 mb-4 bg-orangeInd text-black font-mono text-[10px] font-bold tracking-widest uppercase">
+            OPERACIONES DE ALTO TONELAJE · CHILE
+          </div>
+<h1 class="font-grotesk font-extrabold text-5xl md:text-6xl text-white tracking-tighter leading-[0.95] mb-5">
+            MOVEMOS LA<br>
+            INDUSTRIA<br>
+<span class="text-white relative inline-block">
+              PESADA.
+              <span class="absolute bottom-1 left-0 w-full h-2 bg-orangeInd/40 -z-10"></span>
+</span>
+</h1>
+<p class="font-grotesk text-[#A6ADB9] text-base leading-relaxed max-w-2xl mb-8">
+            Operaciones integrales de transporte de personal de alta montaña, logística crítica de faena y soporte a proyectos mineros de gran escala en el norte de Chile.
+          </p>
+<!-- Badges técnicos -->
+<div class="flex flex-wrap items-center gap-3 font-mono text-[11px]">
+<span class="px-3 py-1.5 bg-black/60 border border-white/15 text-white flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-orangeInd"></span>
+              ESTÁNDAR MINERO RESSO
+            </span>
+<span class="px-3 py-1.5 bg-black/60 border border-white/15 text-white flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-steelBlue"></span>
+              CONDUCCIÓN ALTA MONTAÑA
+            </span>
+<span class="px-3 py-1.5 bg-black/60 border border-white/15 text-white flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-emerald-400"></span>
+              MONITOREO TELEMÉTRICO 24/7
+            </span>
+</div>
+</div>
+<!-- Barra de estado hero inferior -->
+<div class="relative z-10 pt-4 border-t border-white/10 flex items-center justify-between font-mono text-[10px] text-[#6C727F]">
+<div class="">HOMOLOGACIÓN SICEP: CLASE A // CALIFICACIÓN 99.4%</div>
+<div class="text-[#A6ADB9]">CONTRATOS ACTIVOS: MINERA CERRO ALTO · ANDES COBRE · FAENA LOS CÓNDORES</div>
+</div>
+</section>
+<!-- b) DIAGRAMA TÉCNICO DE CAPACIDADES (Nodos y líneas estilo plano de ingeniería) -->
+<section class="p-10 border-b border-[rgba(255,255,255,0.08)] bg-carbonDark" id="capacidades">
+<div class="flex items-center justify-between mb-8">
+<div>
+<span class="font-mono text-xs text-orangeInd tracking-widest block mb-1">[ 01 / ARQUITECTURA OPERACIONAL ]</span>
+<h2 class="font-grotesk font-bold text-2xl text-white tracking-tight">CAPACIDADES TÉCNICAS INTEGRADAS</h2>
+</div>
+<span class="font-mono text-[11px] text-[#6C727F] border border-white/10 px-3 py-1">
+            CIRCUITO LOGÍSTICO // NORTE GRANDE
+          </span>
+</div>
+<!-- Diagrama Visual de 3 Nodos Conectados -->
+<div class="grid grid-cols-3 gap-6 relative">
+<!-- Conector horizontal superior entre nodos (Línea punteada) -->
+<div class="absolute top-8 left-[15%] right-[15%] h-[1px] border-t border-dashed border-white/20 -z-0 pointer-events-none"></div>
+<!-- NODO 01 -->
+<div class="relative z-10 bg-carbon border border-white/10 p-6 flex flex-col justify-between hover:border-orangeInd/50 transition-colors">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-mono text-[11px] px-2 py-0.5 bg-orangeInd/15 border border-orangeInd/40 text-orangeInd font-bold">
+                  NODO · 01
+                </span>
+<span class="font-mono text-[10px] text-[#6C727F]">PAX // HEAVY DUTY</span>
+</div>
+<h3 class="font-grotesk font-bold text-lg text-white mb-2 uppercase">Transporte de Personal</h3>
+<p class="text-[#888D96] font-mono text-xs leading-relaxed mb-6">
+                Flota de buses 4x4 y pullmans presurizados, control de fatiga por telemetría IA, rutas cordilleranas (Antofagasta, Calama, Iquique).
+              </p>
+</div>
+<div class="border-t border-white/10 pt-4 font-mono text-[11px] space-y-1.5 text-[#B4BAC5]">
+<div class="flex justify-between">
+<span class="text-[#6C727F]">Flota:</span>
+<span class="">Buses 4x4 / Sprinter Mineras</span>
+</div>
+<div class="flex justify-between">
+<span class="text-[#6C727F]">Seguridad:</span>
+<span class="text-orangeInd">Sensor Antifatiga + GPS Dual</span>
+</div>
+</div>
+</div>
+<!-- NODO 02 -->
+<div class="relative z-10 bg-carbon border border-white/10 p-6 flex flex-col justify-between hover:border-steelBlue transition-colors">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-mono text-[11px] px-2 py-0.5 bg-steelBlue/20 border border-steelBlue/50 text-[#93C5FD] font-bold">
+                  NODO · 02
+                </span>
+<span class="font-mono text-[10px] text-[#6C727F]">CARGO // OVERSPEC</span>
+</div>
+<h3 class="font-grotesk font-bold text-lg text-white mb-2 uppercase">Logística de Carga Crítica</h3>
+<p class="text-[#888D96] font-mono text-xs leading-relaxed mb-6">
+                Camabajas, camiones tolva, suministro de insumos pesados y escolta de cargas sobredimensionadas con protocolos viales vigentes.
+              </p>
+</div>
+<div class="border-t border-white/10 pt-4 font-mono text-[11px] space-y-1.5 text-[#B4BAC5]">
+<div class="flex justify-between">
+<span class="text-[#6C727F]">Capacidad:</span>
+<span class="">Ramplas hasta 60 Toneladas</span>
+</div>
+<div class="flex justify-between">
+<span class="text-[#6C727F]">Escolta:</span>
+<span class="text-[#93C5FD]">Camionetas Pilot Certificadas</span>
+</div>
+</div>
+</div>
+<!-- NODO 03 -->
+<div class="relative z-10 bg-carbon border border-white/10 p-6 flex flex-col justify-between hover:border-metalGray transition-colors">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-mono text-[11px] px-2 py-0.5 bg-metalGray border border-white/20 text-white font-bold">
+                  NODO · 03
+                </span>
+<span class="font-mono text-[10px] text-[#6C727F]">INFRA // SITE SUPP</span>
+</div>
+<h3 class="font-grotesk font-bold text-lg text-white mb-2 uppercase">Montaje &amp; Infraestructura</h3>
+<p class="text-[#888D96] font-mono text-xs leading-relaxed mb-6">
+                Movimiento de tierra menor, apoyo a campamentos y mantenimiento preventivo en faena remota bajo condiciones extremas.
+              </p>
+</div>
+<div class="border-t border-white/10 pt-4 font-mono text-[11px] space-y-1.5 text-[#B4BAC5]">
+<div class="flex justify-between">
+<span class="text-[#6C727F]">Turnos:</span>
+<span class="">Régimen Continuo 7x7 / 14x14</span>
+</div>
+<div class="flex justify-between">
+<span class="text-[#6C727F]">Mantención:</span>
+<span class="text-white">Taller Móvil en Terreno</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Franja de métricas y datos de alta densidad -->
+<div class="mt-8 grid grid-cols-3 border border-white/10 bg-carbon font-mono">
+<div class="p-4 border-r border-white/10"><div class="text-[10px] text-[#6C727F]">INDICADOR OPERACIONAL 01</div>
+<div class="text-white font-bold text-lg tracking-tight mt-0.5">FLOTA HOMOLOGADA: OPERACIÓN MULTI-FAENA CONTINUA</div>
+<div class="text-[10px] text-orangeInd mt-1">ESTÁNDAR RESSO HOMOLOGADO</div></div>
+<div class="p-4 border-r border-white/10">
+<div class="text-[10px] text-[#6C727F]">INDICADOR OPERACIONAL 02</div>
+<div class="text-white font-bold text-lg tracking-tight mt-0.5">COBERTURA: MACROZONA NORTE</div>
+<div class="text-[10px] text-[#888D96] mt-1">BASES EN ANTOFAGASTA, CALAMA &amp; IQUIQUE</div>
+</div>
+<div class="p-4"><div class="text-[10px] text-[#6C727F]">INDICADOR OPERACIONAL 03</div>
+<div class="text-emerald-400 font-bold text-lg tracking-tight mt-0.5">SEGURIDAD OPERACIONAL: PROTOCOLO CERO INCIDENTES</div>
+<div class="text-[10px] text-[#888D96] mt-1">MONITOREO TELEMÉTRICO 24/7 EN RUTA</div></div>
+</div>
+</section>
+<!-- c) FRANJA DE PROYECTOS EN ALTA DENSIDAD -->
+<section class="p-10 border-b border-[rgba(255,255,255,0.08)] bg-contentBg" id="proyectos">
+<div class="flex items-center justify-between mb-8">
+<div>
+<span class="font-mono text-xs text-orangeInd tracking-widest block mb-1">[ 02 / FAENAS ACTIVAS &amp; PROYECTOS DE REFERENCIA ]</span>
+<h2 class="font-grotesk font-bold text-2xl text-white tracking-tight">OPERACIONES CRÍTICAS EN CURSO</h2>
+</div>
+<span class="font-mono text-[11px] text-[#6C727F]">EJECUCIÓN 2026 // AUDITORÍA PERMANENTE</span>
+</div>
+<div class="grid grid-cols-3 gap-6 font-mono">
+<!-- Proyecto 01 -->
+<div class="bg-carbon border border-white/10 p-5 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between text-[10px] text-[#6C727F] mb-3">
+<span class="">CONTRATO: AX-M01</span>
+<span class="text-emerald-400">ACTIVO · ALTA EXIGENCIA</span>
+</div>
+<h3 class="font-grotesk font-bold text-base text-white mb-2">PROYECTO ATACAMA SUR</h3>
+<p class="text-xs text-[#888D96] leading-relaxed mb-4">
+                Contrato de transporte de 450 trabajadores diarios en sistema de turnos 7x7. Cobertura Calama - Faena.
+              </p>
+</div>
+<div class="border-t border-white/10 pt-3 text-[10px] space-y-1">
+<div class="flex justify-between">
+<span class="text-[#6C727F]">Régimen:</span>
+<span class="text-white">Turnos 7x7 Rotativo</span>
+</div>
+<div class="flex justify-between">
+<span class="text-[#6C727F]">Volumen:</span>
+<span class="text-orangeInd">12 Buses Pullman 4x4</span>
+</div>
+</div>
+</div>
+<!-- Proyecto 02 -->
+<div class="bg-carbon border border-white/10 p-5 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between text-[10px] text-[#6C727F] mb-3">
+<span class="">CONTRATO: AX-M02</span>
+<span class="text-emerald-400">ACTIVO · ALTA EXIGENCIA</span>
+</div>
+<h3 class="font-grotesk font-bold text-base text-white mb-2">MINERA CORDILLERA</h3>
+<p class="text-xs text-[#888D96] leading-relaxed mb-4">
+                Logística de repuestos críticos y combustible para flota de perforación. 24/7 sin interrupción operacional.
+              </p>
+</div>
+<div class="border-t border-white/10 pt-3 text-[10px] space-y-1">
+<div class="flex justify-between">
+<span class="text-[#6C727F]">SLA Entrega:</span>
+<span class="text-white">&lt; 4 Horas faena alta</span>
+</div>
+<div class="flex justify-between">
+<span class="text-[#6C727F]">Ruta:</span>
+<span class="text-orangeInd">3.800 MSNM Cordillera</span>
+</div>
+</div>
+</div>
+<!-- Proyecto 03 -->
+<div class="bg-carbon border border-white/10 p-5 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between text-[10px] text-[#6C727F] mb-3">
+<span class="">CONTRATO: AX-M03</span>
+<span class="text-emerald-400">ACTIVO · ALTA EXIGENCIA</span>
+</div>
+<h3 class="font-grotesk font-bold text-base text-white mb-2">EXPANSIÓN PLANTA CONCENTRADORA</h3>
+<p class="text-xs text-[#888D96] leading-relaxed mb-4">
+                Movilización de cuadrillas especializadas y escoltas viales autorizadas para montaje electromecánico.
+              </p>
+</div>
+<div class="border-t border-white/10 pt-3 text-[10px] space-y-1">
+<div class="flex justify-between">
+<span class="text-[#6C727F]">Vehículos:</span>
+<span class="text-white">6 Vans 4x4 + 2 Camabajas</span>
+</div>
+<div class="flex justify-between">
+<span class="text-[#6C727F]">Certificación:</span>
+<span class="text-orangeInd">Protocolo Vial MOP/Faena</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- d) SECCIÓN IA: COTIZADOR INDUSTRIAL INTELIGENTE (Pantalla completa / no chat) -->
+<section class="p-10 border-b border-[rgba(255,255,255,0.08)] bg-carbonDark" id="cotizador">
+<!-- Cabecera de módulo -->
+<div class="flex items-center justify-between border-b border-white/10 pb-4 mb-8 font-mono">
+<div class="flex items-center gap-3">
+<span class="text-orangeInd font-bold text-sm">▶</span>
+<span class="text-white font-bold text-sm tracking-wide">
+              SISTEMA DE DIMENSIONAMIENTO INDUSTRIAL // AXION-ENGINE v2.6
+            </span>
+<span class="px-2 py-0.5 bg-orangeInd/20 border border-orangeInd/40 text-orangeInd text-[10px] font-bold">
+              DEMO — DATOS SIMULADOS
+            </span>
+</div>
+<div class="flex items-center gap-2 text-xs text-[#A6ADB9]">
+<span class="w-2 h-2 rounded-full bg-orangeInd animate-pulse"></span>
+<span class="">MOTOR DE CALCULO ACTIVO</span>
+</div>
+</div>
+<!-- Layout a Dos Columnas de Alto Impacto (50% / 50%) -->
+<div class="grid grid-cols-2 gap-8">
+<!-- COLUMNA IZQUIERDA: CONFIGURACIÓN & PROMPT DEL OPERADOR -->
+<div class="bg-carbon border border-white/15 p-6 flex flex-col justify-between font-mono">
+<div>
+<div class="text-[11px] text-[#888D96] uppercase mb-2 flex items-center justify-between">
+<span class="">[ INPUT EN LENGUAJE NATURAL ]</span>
+<span class="text-orangeInd text-[10px]">ANALIZADOR SEMÁNTICO</span>
+</div>
+<!-- Requerimiento pre-rellenado -->
+<div class="bg-black/60 border border-white/20 p-3.5 mb-6 text-xs text-[#E6E8EC] leading-relaxed">
+                “Necesito transportar 30 trabajadores desde Antofagasta hasta una faena minera durante 20 días”
+              </div>
+<!-- Paneles de configuración industrial tipo maquinaria -->
+<div class="space-y-5 text-xs">
+<!-- Tipo de Unidad -->
+<div>
+<label class="block text-[11px] text-[#A6ADB9] mb-2 uppercase">
+                    SELECCIÓN DE UNIDAD PRINCIPAL:
+                  </label>
+<div class="grid grid-cols-3 gap-2">
+<button class="py-2 px-2 bg-orangeInd text-black font-bold text-[10px] uppercase text-center border border-orangeInd">
+                      BUS MINERO 4x4 (32 PAX)
+                    </button>
+<button class="py-2 px-2 bg-metalGray/60 hover:bg-metalGray text-[#B4BAC5] text-[10px] uppercase text-center border border-white/10 transition-colors">
+                      MINIBÚS SPRINTER (19 PAX)
+                    </button>
+<button class="py-2 px-2 bg-metalGray/60 hover:bg-metalGray text-[#B4BAC5] text-[10px] uppercase text-center border border-white/10 transition-colors">
+                      CAMIÓN CAMABAJA
+                    </button>
+</div>
+</div>
+<!-- Régimen de Turno -->
+<div>
+<label class="block text-[11px] text-[#A6ADB9] mb-2 uppercase">
+                    RÉGIMEN DE TURNO EN FAENA:
+                  </label>
+<div class="grid grid-cols-4 gap-2">
+<button class="py-1.5 bg-orangeInd text-black font-bold text-[11px] text-center border border-orangeInd">
+                      7x7
+                    </button>
+<button class="py-1.5 bg-metalGray/60 text-[#888D96] text-[11px] text-center border border-white/10 hover:text-white">
+                      4x3
+                    </button>
+<button class="py-1.5 bg-metalGray/60 text-[#888D96] text-[11px] text-center border border-white/10 hover:text-white">
+                      14x14
+                    </button>
+<button class="py-1.5 bg-metalGray/60 text-[#888D96] text-[11px] text-center border border-white/10 hover:text-white">
+                      CONTINUO
+                    </button>
+</div>
+</div>
+<!-- Fechas & Plazo -->
+<div>
+<label class="block text-[11px] text-[#A6ADB9] mb-2 uppercase">
+                    VENTANA OPERACIONAL ESTIMADA:
+                  </label>
+<div class="p-2.5 bg-black/50 border border-white/10 text-white text-xs flex items-center justify-between">
+<span class="">01 NOV 2026 → 20 NOV 2026</span>
+<span class="text-orangeInd font-semibold text-[11px]">20 DÍAS CORRIDOS</span>
+</div>
+</div>
+<!-- Equipamiento Obligatorio -->
+<div>
+<label class="block text-[11px] text-[#A6ADB9] mb-2 uppercase">
+                    EQUIPAMIENTO DE SEGURIDAD EXIGIDO:
+                  </label>
+<div class="space-y-2 bg-black/40 p-3 border border-white/10 text-[11px]">
+<label class="flex items-center gap-2 cursor-pointer text-white">
+<input checked="" class="rounded-none bg-carbon border-white/30 text-orangeInd focus:ring-0" type="checkbox">
+<span class="">Certificación RESSO (Vigencia 2026)</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer text-white">
+<input checked="" class="rounded-none bg-carbon border-white/30 text-orangeInd focus:ring-0" type="checkbox">
+<span class="">GPS Satelital Dual con corte remoto</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer text-white">
+<input checked="" class="rounded-none bg-carbon border-white/30 text-orangeInd focus:ring-0" type="checkbox">
+<span class="">Tercer Ojo Antifatiga con IA de cabina</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Botón de regeneración técnica -->
+<div class="pt-6 mt-6 border-t border-white/10">
+<button class="w-full py-2.5 bg-steelBlue hover:bg-[#2F475D] text-white font-grotesk font-bold text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2">
+<span class="">⚡</span> RECALCULAR DIMENSIONAMIENTO
+              </button>
+</div>
+</div>
+<!-- COLUMNA DERECHA: ORDEN DE COTIZACIÓN ESTILO FICHA TÉCNICA -->
+<div class="bg-carbon border border-white/15 p-6 flex flex-col justify-between font-mono">
+<div>
+<!-- Encabezado con Código de Barras Simulado -->
+<div class="flex items-start justify-between border-b border-white/10 pb-4 mb-5">
+<div>
+<div class="text-[10px] text-[#6C727F]">DOCUMENTO TÉCNICO FORMAL</div>
+<h3 class="font-grotesk font-extrabold text-base text-white tracking-wide">
+                    ORDEN TÉCNICA DE COTIZACIÓN #AX-2026-0849
+                  </h3>
+</div>
+<!-- Código de barras en Mono -->
+<div class="text-right text-[9px] text-[#888D96] tracking-tighter leading-none">
+                  || | ||| | || |||| | ||| |||| |<br>
+<span class="text-[8px] text-[#6C727F]">AX-DIM-2026</span>
+</div>
+</div>
+<!-- Desglose de Parámetros Interpretados -->
+<div class="space-y-3 text-xs mb-6">
+<div class="p-2.5 bg-black/40 border border-white/10 flex items-center justify-between">
+<div>
+<div class="text-[10px] text-[#6C727F]">RUTA / ORIGEN-DESTINO</div>
+<div class="text-white font-medium">Antofagasta → Faena Minera Región II</div>
+</div>
+<span class="px-2 py-0.5 bg-orangeInd/15 border border-orangeInd/40 text-orangeInd text-[10px] font-bold">
+                    DETECTADO
+                  </span>
+</div>
+<div class="p-2.5 bg-black/40 border border-white/10 flex items-center justify-between">
+<div>
+<div class="text-[10px] text-[#6C727F]">DOTACIÓN DE PERSONAL</div>
+<div class="text-white font-medium">30 Pasajeros / día</div>
+</div>
+<span class="px-2 py-0.5 bg-orangeInd/15 border border-orangeInd/40 text-orangeInd text-[10px] font-bold">
+                    DETECTADO
+                  </span>
+</div>
+<div class="p-2.5 bg-black/40 border border-white/10 flex items-center justify-between">
+<div>
+<div class="text-[10px] text-[#6C727F]">DURACIÓN OPERACIONAL</div>
+<div class="text-white font-medium">20 Días continuos</div>
+</div>
+<span class="px-2 py-0.5 bg-orangeInd/15 border border-orangeInd/40 text-orangeInd text-[10px] font-bold">
+                    DETECTADO
+                  </span>
+</div>
+<div class="p-2.5 bg-black/40 border border-white/10 flex items-center justify-between">
+<div>
+<div class="text-[10px] text-[#6C727F]">ASIGNACIÓN DE FLOTA SUGERIDA</div>
+<div class="text-white font-medium text-[11px]">1x Bus Scania K400 4x4 Minero (32 asientos)</div>
+</div>
+<span class="px-2 py-0.5 bg-orangeInd/15 border border-orangeInd/40 text-orangeInd text-[10px] font-bold">
+                    OPTIMIZADO
+                  </span>
+</div>
+<!-- Campos pendientes en advertencia técnica -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div class="p-2 bg-red-950/30 border border-orangeInd/40">
+<div class="text-[9px] text-[#A6ADB9]">PUNTO CONTACTO / RAZÓN SOCIAL:</div>
+<div class="text-orangeInd font-bold text-[10px] mt-0.5">[ REQUERIDO ]</div>
+</div>
+<div class="p-2 bg-red-950/30 border border-orangeInd/40">
+<div class="text-[9px] text-[#A6ADB9]">RUT EMPRESA MANDANTE:</div>
+<div class="text-orangeInd font-bold text-[10px] mt-0.5">[ REQUERIDO ]</div>
+</div>
+</div>
+</div>
+<!-- Estimación técnica de recursos proyectados -->
+<div class="p-3 bg-[#0c0d10] border border-white/10 text-[11px] mb-6 space-y-1"><div class="text-[10px] text-[#888D96] uppercase mb-1">PROYECCIÓN TÉCNICA DE RECURSOS:</div>
+<div class="flex justify-between text-[#B4BAC5]">
+<span class="">Distancia proyectada ciclo completo:</span>
+<span class="text-white font-semibold">Ruta certificada faena alta montaña</span>
+</div>
+<div class="flex justify-between text-[#B4BAC5]">
+<span class="">Consumo Diesel Grado Minero est.:</span>
+<span class="text-white font-semibold">Régimen diésel estándar faena</span>
+</div>
+<div class="flex justify-between text-[#B4BAC5]">
+<span class="">Horas conducción por operador:</span>
+<span class="text-emerald-400 font-semibold">Conforme Ley 40h + D.S. 72</span>
+</div></div>
+</div>
+<!-- Botón Principal de Acción -->
+<div>
+<button class="w-full py-3 bg-orangeInd hover:bg-[#ff7a1a] text-black font-grotesk font-extrabold text-sm uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-2">
+<span class="">■</span> ENVIAR A CRM // ASIGNAR A LOGÍSTICA MINERA
+              </button>
+<div class="text-[9px] text-[#6C727F] text-center mt-2.5">
+                Protocolo de validación técnica de seguridad minera obligatorio antes de emisión de contrato final.
+              </div>
+</div>
+</div>
+</div>
+</section>
+<!-- e) FOOTER TÉCNICO BRUTALISTA -->
+<footer class="p-8 border-t border-[rgba(255,255,255,0.08)] bg-carbon text-[#888D96] font-mono text-[11px] space-y-4" id="seguridad">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-2.5 h-2.5 bg-orangeInd"></span>
+<span class="text-white font-semibold tracking-wide">
+              AXION INDUSTRIES CHILE SPA · RUT 76.982.110-K · AV. PEDRO AGUIRRE CERDA 8900, ANTOFAGASTA
+            </span>
+</div>
+<div class="text-right text-[#6C727F]">
+            MESA CENTRAL FAENAS: +56 (55) 249-8000
+          </div>
+</div>
+<div class="flex items-center justify-between border-t border-white/10 pt-4 text-[10px]">
+<div class="flex items-center gap-4 text-white">
+<span class="px-2 py-0.5 bg-metalGray border border-white/10">CERTIFICACIÓN ISO 9001</span>
+<span class="px-2 py-0.5 bg-metalGray border border-white/10">ISO 14001</span>
+<span class="px-2 py-0.5 bg-metalGray border border-white/10">ISO 45001</span>
+</div>
+<div class="">
+            © 2026 AXION INDUSTRIES · OPERACIONES MACROZONA NORTE
+          </div>
+</div>
+</footer>
+</main>
+</div>
+
+
+</body></html>
